@@ -58,7 +58,9 @@ function torRequest (uri, options, callback) {
       agent.encryptedSocket.end();
     }
 
-    params.callback(err, res, body);
+    if (params.callback) {
+      params.callback(err, res, body);
+    }
   });
 }
 
